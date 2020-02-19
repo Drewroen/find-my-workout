@@ -3,7 +3,7 @@
   "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "workout-app": {
+    "find-my-workout": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/workout-app",
+            "outputPath": "dist/find-my-workout",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "workout-app:build"
+            "browserTarget": "find-my-workout:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "workout-app:build:production"
+              "browserTarget": "find-my-workout:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "workout-app:build"
+            "browserTarget": "find-my-workout:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "workout-app:serve"
+            "devServerTarget": "find-my-workout:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "workout-app:serve:production"
+              "devServerTarget": "find-my-workout:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "workout-app"
+  "defaultProject": "find-my-workout"
 }
