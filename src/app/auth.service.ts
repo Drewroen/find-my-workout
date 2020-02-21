@@ -14,7 +14,8 @@ export class AuthService {
     createAuth0Client({
       domain: "drewroen.auth0.com",
       client_id: "3M81ikIzbt0gA3ZfyBrdwAeYyLOu07l5",
-      redirect_uri: `${window.location.origin}`
+      redirect_uri: `${window.location.origin}`,
+      audience: "https://api.whatstheworkout.com"
     })
   ) as Observable<Auth0Client>).pipe(
     shareReplay(1), // Every subscription receives the same shared value
@@ -121,6 +122,12 @@ export class AuthService {
         returnTo: `${window.location.origin}`
       });
     });
+  }
+
+  getTokenSilently$(options?): Observable<string> {
+    return this.auth0Client$.pipe(
+      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
+    );
   }
 
 }
