@@ -11,6 +11,6 @@ export class ApiService {
   }
 
   ping$(): Observable<any> {
-    return this.http.get('https://api.whatstheworkout.com/ping');
+    return this.http.get('https://api.whatstheworkout.com/xping-auth');
   }
 }
