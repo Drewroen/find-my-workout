@@ -1,8 +1,8 @@
 <header>
     <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
     <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
-    <a routerLink="/">Home</a>&nbsp;
+    <a routerLink="/">Search Workouts</a>&nbsp;
     <a routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
-    &nbsp;<a routerLink="external-api" *ngIf="auth.loggedIn">External API</a>
-    <p *ngIf="auth.loggedIn">Welcome to the application! Glad you logged in!</p>
+    <button *ngIf="auth.loggedIn">Create workout</button>
+    <p *ngIf="!auth.loggedIn">You must be logged in to create workouts</p>
 </header>

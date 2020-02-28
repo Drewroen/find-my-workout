@@ -2,20 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth.guard';
-import { ExternalApiComponent } from './external-api/external-api.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './interceptor.service';
+import { WorkoutListComponent } from './workout-list/workout-list.component';
 
 
 const routes: Routes = [
   {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthGuard]
+    path: '',
+    component: WorkoutListComponent
   },
   {
-    path: 'external-api',
-    component: ExternalApiComponent,
+    path: 'profile',
+    component: ProfileComponent,
     canActivate: [AuthGuard]
   }
 ];

@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './nav-bar/nav-bar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ExternalApiComponent } from './external-api/external-api.component';
+import { WorkoutListComponent } from './workout-list/workout-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProfileComponent,
-    ExternalApiComponent
+    WorkoutListComponent
   ],
   imports: [
     BrowserModule,

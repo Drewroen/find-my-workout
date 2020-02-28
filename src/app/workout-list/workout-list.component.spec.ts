@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExternalApiComponent } from './external-api.component';
+import { WorkoutListComponent } from './workout-list.component';
 
-describe('ExternalApiComponent', () => {
-  let component: ExternalApiComponent;
-  let fixture: ComponentFixture<ExternalApiComponent>;
+describe('WorkoutListComponent', () => {
+  let component: WorkoutListComponent;
+  let fixture: ComponentFixture<WorkoutListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExternalApiComponent ]
+      declarations: [ WorkoutListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExternalApiComponent);
+    fixture = TestBed.createComponent(WorkoutListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
