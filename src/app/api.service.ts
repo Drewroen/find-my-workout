@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Workout } from './shared/models/workout.model';
+import { Endpoints } from './utils/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,10 @@ export class ApiService {
   }
 
   ping$(): Observable<any> {
-    return this.http.get('https://api.whatstheworkout.com/xping/auth');
+    return this.http.get(Endpoints.XPING_AUTH);
   }
 
   getAllWorkouts$(): Observable<Workout[]> {
-    return this.http.get<Workout[]>('https://api.whatstheworkout.com/workouts/get-all-workouts')
+    return this.http.get<Workout[]>(Endpoints.GET_ALL_WORKOUTS)
   }
 }

@@ -8,6 +8,7 @@ import {
 import { AuthService } from './auth.service';
 import { Observable, throwError } from 'rxjs';
 import { mergeMap, catchError } from 'rxjs/operators';
+import { Endpoints } from './utils/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +21,19 @@ export class InterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    return this.auth.getTokenSilently$().pipe(
-      mergeMap(token => {
-        const tokenReq = req.clone({
-          setHeaders: { Authorization: `Bearer ${token}` }
-        });
-        return next.handle(tokenReq);
-      }),
-      catchError(err => throwError(err))
-    );
+    console.log(req.url);
+    if (!Endpoints.PUBLIC_ENDPOINTS.includes(req.url)) {
+      return this.auth.getTokenSilently$().pipe(
+        mergeMap(token => {
+          const tokenReq = req.clone({
+            setHeaders: { Authorization: `Bearer ${token}` }
+          });
+          return next.handle(tokenReq);
+        }),
+        catchError(err => throwError(err))
+      );
+    }
+    const headers = req.headers;
+    return next.handle(req.clone({ headers }));
   }
 }
