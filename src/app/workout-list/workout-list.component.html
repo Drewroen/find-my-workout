@@ -2,3 +2,6 @@
     <h2>{{ workout.name }}</h2>
     <h3>{{ workout.description }}</h3>
 </div>
+<div *ngIf="auth.loggedIn">
+    (You're logged in btw)
+</div>
