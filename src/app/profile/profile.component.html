@@ -1,3 +1,8 @@
 <pre *ngIf="auth.userProfile$ | async as profile">
     <code>{{ profile | json }}</code>
-    </pre>
+</pre>
+
+<mat-grid-list cols="3">
+    <mat-grid-tile style="background:blue">1</mat-grid-tile>
+    <mat-grid-tile colspan="2" style="background:purple">2</mat-grid-tile>
+</mat-grid-list>
