@@ -21,7 +21,13 @@ table {
   width: 100%;
 }
 
-.advanced-search-header {
+.advanced-search {
   text-align: left;
   margin: 8px;
+  width: 100%;
+}
+
+.advanced-search-option {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
