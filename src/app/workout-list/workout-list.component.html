@@ -1,13 +1,28 @@
 <div class="search-wrapper">
-  <mat-grid-list cols="3">
-    <div class="search-bar-wrapper" style="background:green">
-      <mat-form-field fxFlex class="search-bar">
-        <mat-label>Search Workouts</mat-label>
-        <input matInput placeholder="Search">
-      </mat-form-field>
-    </div>
-    <mat-grid-tile style="background:blue">1</mat-grid-tile>
-    <mat-grid-tile colspan="2">
+  <div class="search-bar-wrapper" style="background:green">
+    <mat-form-field fxFlex class="search-bar">
+      <mat-label>Search Workouts</mat-label>
+      <input matInput placeholder="Search">
+    </mat-form-field>
+  </div>
+  <mat-grid-list cols="5">
+    <mat-grid-tile style="background:blue">
+      <div fxLayout="column" class="advanced-search-wrapper">
+        <div fxFlex class="advanced-search-header">
+          Filters
+        </div>
+        <div fxFlex>
+          1
+        </div>
+        <div fxFlex>
+          1
+        </div>
+        <div fxFlex>
+          1
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4">
       <div fxLayout="column" fxLayoutAlign="start center" class="table-wrapper">
         <table mat-table [dataSource]="workouts">
 
