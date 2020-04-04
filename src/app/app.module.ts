@@ -16,6 +16,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { MatInputModule } from '@angular/material/input';
     MatGridListModule,
     MatTableModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

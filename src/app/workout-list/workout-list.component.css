@@ -9,25 +9,30 @@
 }
 
 .table-wrapper {
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
+
 table {
   width: 100%;
 }
 
 .advanced-search-wrapper {
   height: 100%;
-  width: 100%;
+  width: 20%;
+  float: left;
 }
 
 .advanced-search {
   text-align: left;
-  margin: 8px;
   width: 100%;
+  margin-right: 8px;
 }
 
-.advanced-search-option {
-  margin-top: 8px;
-  margin-bottom: 8px;
+.mat-accordion .mat-expansion-panel {
+  border-radius: 0;
+}
+
+mat-slider {
+  width: 100%;
 }

@@ -1,51 +1,123 @@
 <div class="search-wrapper">
-  <div class="search-bar-wrapper" style="background:green">
+  <div class="search-bar-wrapper" style="background: green;">
     <mat-form-field fxFlex class="search-bar">
       <mat-label>Search Workouts</mat-label>
-      <input matInput placeholder="Search">
+      <input matInput placeholder="Search" />
     </mat-form-field>
   </div>
-  <mat-grid-list cols="5">
-    <mat-grid-tile style="background:#FFCCCB">
-      <div class="advanced-search-wrapper">
-        <div fxLayout="column" class="advanced-search">
-          <div fxFlex class="advanced-search-option">
-            Filters
-          </div>
-          <div fxFlex class="advanced-search-option">
-            Filters
-          </div>
-          <div fxFlex class="advanced-search-option">
-            Filters
-          </div>
-          <div fxFlex class="advanced-search-option">
-            Filters
-          </div>
+  <div class="advanced-search-wrapper">
+    <mat-accordion fxFlex class="advanced-search">
+      <mat-expansion-panel class="advanced-search-option">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Rating
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-radio-group aria-label="Rating" fxFlex fxLayout="column">
+          <mat-radio-button value="1">
+            <mat-icon>star</mat-icon>
+          </mat-radio-button>
+          <mat-radio-button value="2">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+          </mat-radio-button>
+          <mat-radio-button value="3">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+          </mat-radio-button>
+          <mat-radio-button value="4">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+          </mat-radio-button>
+          <mat-radio-button value="5">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-expansion-panel>
+      <mat-expansion-panel class="advanced-search-option">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Time (Minutes)
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-slider
+          tickInterval="1000"
+          min="0"
+          max="100">
+        </mat-slider>
+      </mat-expansion-panel>
+      <mat-expansion-panel class="advanced-search-option">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Type
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxFlex fxLayout="column">
+          <mat-checkbox>
+            Tempo
+          </mat-checkbox>
+          <mat-checkbox>
+            Interval
+          </mat-checkbox>
+          <mat-checkbox>
+            Fartlek
+          </mat-checkbox>
+          <mat-checkbox>
+            Track
+          </mat-checkbox>
         </div>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="4">
-      <div fxLayout="column" fxLayoutAlign="start center" class="table-wrapper">
-        <table mat-table [dataSource]="workouts">
+      </mat-expansion-panel>
+      <mat-expansion-panel class="advanced-search-option">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Zone
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxFlex fxLayout="column">
+          <mat-checkbox>
+            Z1 (Moderate)
+          </mat-checkbox>
+          <mat-checkbox>
+            Z2 (Tempo)
+          </mat-checkbox>
+          <mat-checkbox>
+            Z3 (Aerobic)
+          </mat-checkbox>
+          <mat-checkbox>
+            Z4 (Threshold)
+          </mat-checkbox>
+          <mat-checkbox>
+            Z5 (Redline)
+          </mat-checkbox>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="start center" class="table-wrapper">
+    <table mat-table [dataSource]="workouts" class="table">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Workout Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
 
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Workout Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
 
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
-            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
 </div>
 
 <div *ngIf="auth.loggedIn">
-    (You're logged in btw)
+  (You're logged in btw)
 </div>

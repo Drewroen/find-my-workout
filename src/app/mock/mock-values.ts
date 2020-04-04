@@ -20,9 +20,21 @@ export const MOCK_WORKOUT_LIST: Workout[] = [
         description: 'Man this sucks!'
     },
     {
-        workoutId: 'ID4',
-        userId: 'Bla',
-        name: 'The Michigan',
-        description: 'A tough workout'
+      workoutId: 'ID4',
+      userId: 'Bla',
+      name: 'The Michigan',
+      description: 'A tough workout'
+    },
+    {
+      workoutId: 'ID4',
+      userId: 'Bla',
+      name: 'The Michigan',
+      description: 'A tough workout'
+    },
+    {
+      workoutId: 'ID4',
+      userId: 'Bla',
+      name: 'The Michigan',
+      description: 'A tough workout'
     }
 ];
