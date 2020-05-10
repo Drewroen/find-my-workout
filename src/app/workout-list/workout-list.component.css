@@ -8,6 +8,15 @@
   margin: 8px;
 }
 
+.search-icon {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.search-bar-wrapper {
+  margin-bottom: 8px;
+}
+
 .table-wrapper {
   width: 80%;
   height: 100%;

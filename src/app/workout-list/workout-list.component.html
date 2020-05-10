@@ -1,5 +1,8 @@
 <div class="search-wrapper">
   <div class="search-bar-wrapper" style="background: green;">
+    <div class="search-icon">
+      <mat-icon>search</mat-icon>
+    </div>
     <mat-form-field fxFlex class="search-bar">
       <mat-label>Search Workouts</mat-label>
       <input matInput placeholder="Search" />
@@ -47,11 +50,7 @@
             Time (Minutes)
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-slider
-          tickInterval="1000"
-          min="0"
-          max="100">
-        </mat-slider>
+        <mat-slider tickInterval="1000" min="0" max="100"> </mat-slider>
       </mat-expansion-panel>
       <mat-expansion-panel class="advanced-search-option">
         <mat-expansion-panel-header>
