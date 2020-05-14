@@ -1,17 +1,37 @@
-<p>create-workout works!</p>
-Name:
-<input type="text" placeholder="Workout Name" [(ngModel)]="name" />
-<br>
-Description:
-<input type="text" placeholder="Workout Description" [(ngModel)]="description" />
-<br>
-<div *ngFor="let s of steps; let index = index;">
-  <input type="text" placeholder="Step Type" [(ngModel)]="steps[index].stepType">
-  <input type="text" placeholder="Note" [(ngModel)]="steps[index].note">
-  <input type="number" placeholder="Duration Type" [(ngModel)]="steps[index].durationType">
-  <input type="number" placeholder="Duration Value" [(ngModel)]="steps[index].durationValue">
-  <input type="number" placeholder="Effort" [(ngModel)]="steps[index].effort">
-  <button (click)="removeStep(index)">X</button>
+<div class="workout">
+  <div class="workout-header">
+    <input type="text" class="form-control" placeholder="Workout Name" aria-label="Workout Name" [(ngModel)]="name">
+    <textarea type="text" class="form-control" placeholder="Workout Description" aria-label="Workout Description" [(ngModel)]="description"></textarea>
+  </div>
+
+  <div cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let s of steps; let index = index;" cdkDrag style="margin: 5px;">
+      <div class="input-group">
+        <input type="number" placeholder="Set Duration" class="form-control" [(ngModel)]="steps[index].durationValue">
+        <select class="custom-select" [(ngModel)]="steps[index].durationType">
+          <option value="Miles">Miles</option>
+          <option value="Kilometers">Kilometers</option>
+          <option value="Meters">Meters</option>
+          <option value="Seconds">Seconds</option>
+          <option value="Minutes">Minutes</option>
+          <option value="Hours">Hours</option>
+        </select>
+        <input type="number" placeholder="Percent Effort" class="form-control" [(ngModel)]="steps[index].effort">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-outline-danger" aria-label="Close" (click)="removeStep(index)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<button (click)="addStep()">ADD STEP</button>
-<button (click)="postWorkout()">CLICK ME TO POST AN EMPTY WORKOUT</button>
+
+<div class="btn-group" role="group">
+  <button type="button" class="btn btn-primary" (click)="addStep()">Add Step</button>
+  <button type="button" class="btn btn-info">Add Repeat</button>
+  <button type="button" class="btn btn-success"(click)="postWorkout()">Save Workout</button>
+</div>
+
+
+

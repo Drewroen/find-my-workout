@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Step } from '../shared/models/workout.model'
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-create-workout',
@@ -28,10 +29,14 @@ export class CreateWorkoutComponent implements OnInit {
   }
 
   public addStep() {
-    this.steps.push({ stepType: null, note: null, durationType: null, durationValue: null, effort: null });
+    this.steps.push({ stepType: "Step", note: null, durationType: "Miles", durationValue: 1.0, effort: .5 });
   }
 
   public removeStep(index: number) {
     this.steps.splice(index, 1);
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.steps, event.previousIndex, event.currentIndex);
   }
 }

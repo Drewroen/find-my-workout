@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './nav-bar/nav-bar.component';
@@ -48,7 +48,8 @@ import { CreateWorkoutComponent } from './create-workout/create-workout.componen
     MatRadioModule,
     MatSliderModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
