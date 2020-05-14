@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { ApiService } from '../api.service';
 import { Workout } from '../shared/models/workout.model';
 
@@ -13,7 +12,7 @@ export class WorkoutListComponent implements OnInit {
   public workouts: Workout[];
   public displayedColumns = ['name', 'description']
 
-  constructor(public auth: AuthService, public apiService: ApiService) {
+  constructor(public apiService: ApiService) {
   }
 
   ngOnInit(): void {

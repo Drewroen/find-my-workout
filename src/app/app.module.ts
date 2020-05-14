@@ -20,13 +20,16 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'
+import { CreateWorkoutComponent } from './create-workout/create-workout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProfileComponent,
-    WorkoutListComponent
+    WorkoutListComponent,
+    CreateWorkoutComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatExpansionModule,
     MatRadioModule,
     MatSliderModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

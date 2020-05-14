@@ -1,0 +1,17 @@
+<p>create-workout works!</p>
+Name:
+<input type="text" placeholder="Workout Name" [(ngModel)]="name" />
+<br>
+Description:
+<input type="text" placeholder="Workout Description" [(ngModel)]="description" />
+<br>
+<div *ngFor="let s of steps; let index = index;">
+  <input type="text" placeholder="Step Type" [(ngModel)]="steps[index].stepType">
+  <input type="text" placeholder="Note" [(ngModel)]="steps[index].note">
+  <input type="number" placeholder="Duration Type" [(ngModel)]="steps[index].durationType">
+  <input type="number" placeholder="Duration Value" [(ngModel)]="steps[index].durationValue">
+  <input type="number" placeholder="Effort" [(ngModel)]="steps[index].effort">
+  <button (click)="removeStep(index)">X</button>
+</div>
+<button (click)="addStep()">ADD STEP</button>
+<button (click)="postWorkout()">CLICK ME TO POST AN EMPTY WORKOUT</button>
